@@ -1,0 +1,39 @@
+<div id="content">
+  <div class="row">
+    <sa-big-breadcrumbs
+      [items]="['Ventas'  | i18n, pageTitle | i18n]"
+      icon="edit"
+      class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    </sa-big-breadcrumbs>
+  </div>
+  <sa-widgets-grid>
+    <div class="row">
+      <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <sa-widget
+          [colorbutton]="false"
+          [editbutton]="false"
+          [custombutton]="false"
+          [sortable]="false"
+          [togglebutton]="false"
+          [deletebutton]="false">
+          <header>
+            <h2><strong>{{'Listado de Ventas' | i18n}}</strong></h2>
+          </header>
+          <div>
+            <div class="widget-body">
+              <div class="smart-form">
+                <div class="row">
+                  <div class="col col-md-8">
+                    <filters-ventas (filters)="sendData($event)"></filters-ventas>
+                  </div>
+                </div>
+              </div>
+              <hr class="simple">
+              <table-ventas [filterData]="data"></table-ventas>
+            </div>
+          </div>
+        </sa-widget>
+      </article>
+    </div>
+  </sa-widgets-grid>
+</div>
